@@ -19,6 +19,10 @@ while True:
         #print("Joke", parse_json)
         print(parse_json['joke'])
         print()
+        if user_input.upper() == "Y":
+            response = requests.get("https://v2.jokeapi.dev/joke/Programming")
+            data = response.text
+            parse_json = json.loads(data)       
     elif user_input.upper() == "N":
         print()
         print("Alright, talk to you later.")
